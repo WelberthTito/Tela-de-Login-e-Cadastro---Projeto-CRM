@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <script src="js\bootstrap.min.js"></script>
+    <script src="js\jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="fonts\bootstrap-icons.css">
+    <script src="fonts\bootstrap-icons.json"></script>
+
+</head>
+    
+    <style>
+        
+        body,footer{
+            background-image: linear-gradient(to right, rgba(139, 245, 0, 0.699),rgba(134, 197, 52, 0.699), rgb(238, 238, 238));
+            text-decoration: none;
+            list-style: none;
+            
+
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+            
+        }
+            
+
+
+    </style>
+
+<!--
+  #################
+  # Tela de Login #
+  #################     
+-->
+
+<script>
+
+var default_user = "teste"
+var defalt_password = '1234'
+
+
+     function validar() {
+        var user = formlogin.nome;
+        if (user.value == ""){
+            alert("Usuario Nao informado!");
+            user.focus();
+        }
+        if (user.value != default_user){
+            alert("Usuario Invalido");
+            user.focus();
+
+        }
+
+        var password = formlogin.senha;
+        if (password.value == ''){
+            alert("Digite uma senha Valida");
+            password.focus();
+
+        }
+        if (password.value != defalt_password){
+            alert("Senha Incorreta");
+            password.focus();
+
+
+        }
+
+        else{
+            window.location.href = "posvalidate.html";
+        }
+
+    }
+
+</script>
+
+
+<body>
+
+<center>
+    <br>
+    <br>
+    <br>
+<form action="" id="formlogin" method="post" name="formlogin">   
+    <div class="card justify-content-center text-center" style="width: 20rem;">
+        <p>
+            <img src="img\lock-fill.svg" width="30px" height="25px" style="margin-top: 20px;" alt="">
+            <h3>Login:</h3>
+        </p>
+
+        <div>
+            <p>
+            <img src="img\person-fill.svg" alt="" width="25px" height="25px" style="margin-top: -10px;"> <input class="text-center" type="text" name="nome" id="nameuser" placeholder="Usuario" required>
+            </p>
+
+            <p>
+                <img src="img\key-fill.svg" alt="" width="25px" height="25px" style="margin-top: -10px;"> <input type="password" class="text-center" name="senha" id="password" placeholder="Senha" required>
+            </p>
+
+            <p> 
+                <input type="checkbox" class="form-check-input" name="manterlogado" id="manterlogado" value="" /> 
+                <label class="form-check-label" for="manterlogado">Manter-me logado</label> 
+            </p>
+
+            <p>
+                <button class="btn btn-primary" type="button" onclick="validar()">Logar</button>
+
+            </p>
+
+            <p>
+                Ainda não possui conta?
+                <a href="cadastro.html"><strong>Cadastre-se</strong></a>
+                <br>
+                <br>
+                <a href="recuperacao.html"><strong>Esqueci a Senha</strong></a>
+            </p>
+
+
+        </div>
+
+    </div>
+
+</form>     
+</center>
+
+    
+
+
+</body>
+
+
+
+</html>
