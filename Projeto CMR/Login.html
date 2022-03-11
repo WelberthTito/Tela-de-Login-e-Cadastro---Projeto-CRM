@@ -50,7 +50,7 @@ var defalt_password = '1234'
             alert("Usuario Nao informado!");
             user.focus();
         }
-        if (user.value != default_user){
+        if (user.value != "" && user.value != default_user){
             alert("Usuario Invalido");
             user.focus();
 
@@ -62,7 +62,7 @@ var defalt_password = '1234'
             password.focus();
 
         }
-        if (password.value != defalt_password){
+        if (password.value != '' && password.value != defalt_password){
             alert("Senha Incorreta");
             password.focus();
 
