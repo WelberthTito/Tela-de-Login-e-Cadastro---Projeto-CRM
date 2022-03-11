@@ -68,7 +68,7 @@
         email.focus();
     }
 
-    else{
+    if(password.value != "" && user.value != "" && confpassword.value == password.value){
         alert("Faça Login para continuar");
         window.location.href = "login.html";
     }
