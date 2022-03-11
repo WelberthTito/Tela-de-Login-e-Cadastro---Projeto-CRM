@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Cadastre-se</title>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <script src="js\bootstrap.min.js"></script>
     <script src="js\jquery-3.6.0.min.js"></script>
@@ -33,11 +33,48 @@
     </style>
 
 <!--
-  #################
-  # Tela de Login #
-  #################     
+  ####################
+  # Tela de Cadastro #
+  ####################     
 -->
 
+<script>
+    function validar() {
+    var password = formcad.senha
+    var confpassword = formcad.confsenha
+    var user = formcad.nome
+    var email = formcad.email
+
+    if (password.value == ''){
+        alert('Digite uma senha Válida');
+        password.focus();
+        
+    }
+
+    if (confpassword.value != password.value){
+        alert('As senhas não conferem');
+        password.focus();
+
+
+    }
+    
+    if (user.value == ""){
+        alert("Usuario Nao informado!");
+        user.focus();
+    }
+
+    if (email.value == ""){
+        alert("E-mail Nao Informado!");
+        email.focus();
+    }
+
+    else{
+        alert("Faça Login para continuar");
+        window.location.href = "login.html";
+    }
+
+}
+</script>
 
 <body>
 
@@ -46,20 +83,28 @@
     <br>
     <br>
 
-<form action="" method="post">
+<form action="" name="formcad" id="formcad" method="post">
     <div class="card justify-content-center text-center" style="width: 20rem;">
         <p>
             <img src="img\lock-fill.svg" width="30px" height="25px" style="margin-top: 20px;" alt="">
-            <h3>Login:</h3>
+            <h3>Cadastre-se:</h3>
         </p>
 
         <div>
             <p>
-            <img src="img\person-fill.svg" alt="" width="25px" height="25px" style="margin-top: -10px;"> <input class="text-center" type="text" name="nome" id="#nameuser" placeholder="Usuario" required>
+            <img src="img\person-fill.svg" alt="" width="25px" height="25px" style="margin-top: -10px;"> <input class="text-center" type="text" name="nome" id="nameuser" placeholder="Usuario" required>
+            </p>
+            
+            <p> 
+                <img src="img\envelope-fill.svg" alt="" width="25px" height="25px" style="margin-top: -10px;"> <input class="text-center" type="email" name="email" id="email" placeholder="E-mail" required>
             </p>
 
             <p>
                 <img src="img\key-fill.svg" alt="" width="25px" height="25px" style="margin-top: -10px;"> <input type="password" class="text-center" name="senha" id="#password" placeholder="Senha" required>
+            </p>
+
+            <p>
+                <img src="img\check-square-fill.svg" alt="" width="20px" height="20px" style="margin-top: -10px;"> <input type="password" class="text-center" name="confsenha" id="confpassword" placeholder="Confirme a senha" required>
             </p>
 
             <p> 
@@ -68,13 +113,13 @@
             </p>
 
             <p>
-                <button class="btn btn-primary" type="submit">Logar</button>
+                <button class="btn btn-primary" type="button" onclick="validar()" >Cadastrar</button>
 
             </p>
 
             <p>
-                Ainda não possui conta?
-                <a href="cadastro.html"><strong>Cadastre-se</strong></a>
+                Já possui conta?
+                <a href="Login.html"><strong>Logar</strong></a>
                 <br>
                 <br>
                 <a href="recuperacao.html"><strong>Esqueci a Senha</strong></a>
